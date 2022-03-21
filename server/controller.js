@@ -18,15 +18,23 @@ export class Controller {
         }
         
         const cmd = command.toLowerCase()
+
         if (cmd.includes('start')) {
-            this.service.startStream()
+            this.service.startStreamming()
             return result
         }
 
         if (cmd.includes('stop')) {
-            this.service.stopStream()
+            this.service.stopStreamming()
             return result
         }
+
+        const choosenFX = await this.service.readFxByName(cmd)
+        logger.info(`added fx to service: ${choosenFX}`)
+
+        this.service.appendFxStream(choosenFX)
+
+        return result
     }
 
     createClientStream() {

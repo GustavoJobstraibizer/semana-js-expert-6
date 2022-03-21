@@ -55,6 +55,7 @@ button.active {
 
 button.unassigned {
   background: #0f5e2a;
+  cursor: not-allowed;
 }
 
 section {

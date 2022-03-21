@@ -32,7 +32,7 @@ async function routes(request, response) {
         return stream.pipe(response)
     }
 
-    if (method === 'GET' && url.includes('/stream')) {
+    if (method === 'GET' && url.includes('stream')) {
         const { stream, onClose } = controller.createClientStream()
         request.once('close', onClose)
         response.writeHead(200, {
