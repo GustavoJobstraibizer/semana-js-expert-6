@@ -67,3 +67,11 @@ $ heroku open
 $ heroku logs -t
 ## -t is for tailing
 ```
+
+## Remove app from Heroku
+
+```bash
+$ heroku apps:delete
+
+## type the app name and hit enter
+```
